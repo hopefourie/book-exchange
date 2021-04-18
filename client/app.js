@@ -1,19 +1,42 @@
 import '../public/style.css';
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import store from './store';
-import { Provider } from 'react-redux';
+import Routes from './routes';
+import NavBar from './components/NavBar';
+import {Router} from 'react-router-dom'
+import history from './history'
+import axios from 'axios';
 
-class App extends Component {
-  render() {
-    return <div>my app component!</div>;
+const App = () => {
+  const [me, setMe] = useState({})
+
+  const getMe = async () => {
+    try {
+      const {data: me} = await axios.get('/auth/me')
+      setMe(me)
+    } catch (error) {
+      console.error(error)
+    }
   }
+
+  useEffect(() => {
+    getMe();
+  }, []);
+
+  return (
+    <div>
+      <NavBar/>
+      <div className="container">
+        <Routes setMe={setMe}/>
+      </div>
+    </div>
+  )
 }
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Router history={history}>
     <App />
-  </Provider>,
+  </Router>,
   document.getElementById('app')
 );
 

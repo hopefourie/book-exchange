@@ -4,38 +4,31 @@ const { db, User, Post } = require('./server/db');
 const seedUsers = [
   {
     email: 'john@john.com',
-    userName: 'john',
+    username: 'live2read',
+    password: "12345"
   },
   {
     email: 'sarah@sarah.com',
-    userName: 'sarah',
+    username: 'bookluvr493',
+    password: "12345"
   },
   {
     email: 'nicky@nicky.com',
-    userName: 'nicky',
+    username: 'pageturner22',
+    password: "12345"
   },
 ];
 
 const seedPosts = [
   {
-    title: 'Chocolate Chip Cookies',
-    content: 'They are so delicious. I could eat them everyday.',
-    userId: 1,
+    heading:"Looking for...",
+    text: "a gay murder mystery",
+    userId: 1
   },
   {
-    title: 'Oatmeal Cookies',
-    content: 'They are so delicious. The oats add a nice texture.',
-    userId: 1,
-  },
-  {
-    title: 'Sugar Cookies',
-    content: 'They are so delicious, but sometimes to sweet for me.',
-    userId: 2,
-  },
-  {
-    title: 'Snickerdoodle Cookies',
-    content: 'They are so delicious, they taste like christmas.',
-    userId: 3,
+    heading:"Does anyone want...",
+    text: "an alien romance novel?",
+    userId: 2
   },
 ];
 
@@ -46,7 +39,6 @@ const seed = async () => {
     await Promise.all(seedPosts.map((post) => Post.create(post)));
     console.log(green('Database successfully seeded 🍪'));
     db.close();
-    // seed your database here!
   } catch (err) {
     console.log(red(err));
   }

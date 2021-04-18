@@ -1,3 +1,142 @@
 body {
-  color: red;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  font-family: 'Open Sans', arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(0deg, #eee, #fff);
+  background-attachment: fixed;
+  letter-spacing: 0.03em;
+}
+.link {
+  text-decoration: none;
+  color: #444;
+  transition: color 0.5s ease;
+  margin: 0px 5px 0px 5px;
+}
+.link:hover {
+  color: #888;
+}
+a {
+  text-decoration: none;
+  color: rgb(94, 135, 255);
+  transition: color 0.5s ease;
+  margin: 20px 0px 0px 0px;
+  text-align: center;
+}
+a:hover {
+  color: rgb(161, 184, 254);
+}
+button {
+  padding: 1em 2em;
+  border: none;
+  font-size: 1em;
+  transition: all 1s ease;
+  outline: none;
+  letter-spacing: 0.1em;
+}
+.navbar {
+  box-sizing: border-box;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid rgb(186, 186, 186) 1px;
+  box-shadow: 0px 4px 8px rgb(220, 220, 220);
+  z-index: 3;
+  position: fixed;
+  width: 100%;
+}
+.container {
+  width: 50%;
+  margin: auto;
+  height: 100vh;
+  padding-top: 63px;
+}
+.component {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  z-index: 1;
+  position: relative;
+}
+
+/* CREATE POST */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 2;
+  margin: 1em;
+}
+form input {
+  font-family: 'Open Sans', arial, sans-serif;
+  padding: 0.3em;
+  margin: 0.5em 0;
+  font-size: 1em;
+  border-radius: 0mm;
+  border: solid rgb(186, 186, 186) 1px;
+}
+
+form button {
+  background-color: #e1e1e1;
+}
+form button:hover {
+  background-color: #b8b8b8;
+}
+form button:disabled {
+  background-color: #ccc;
+}
+.create-post-form {
+  padding: 2% 10% 2% 10%;
+  margin: 0 0 20px 0;
+  border: solid rgb(186, 186, 186) 1px;
+  border-top: none;
+  background-color: white;
+  box-shadow: 4px 4px 8px rgb(220, 220, 220);
+}
+/* FEED */
+.post-box {
+  padding: 2% 10% 2% 10%;
+  border: solid rgb(186, 186, 186) 1px;
+  border-bottom: none;
+  background-color: white;
+  box-shadow: 4px 4px 8px rgb(220, 220, 220);
+}
+
+/* INBOX */
+.user-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2% 10% 2% 10%;
+  border: solid rgb(186, 186, 186) 1px;
+  border-bottom: none;
+  background-color: white;
+  box-shadow: 4px 4px 8px rgb(220, 220, 220);
+}
+.user-icon {
+  width: 10%;
+  margin: 5%;
+  border-radius: 50%;
+  border: solid rgb(186, 186, 186) 1px;
+}
+
+.map-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.auth-form {
+  background-color: white;
+  border: solid rgb(186, 186, 186) 1px;
+  padding: 20px;
 }
